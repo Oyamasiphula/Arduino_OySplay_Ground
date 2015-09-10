@@ -1,0 +1,13 @@
+{
+  "name": "CorDuino",
+  "version": "0.0.0",
+  "description": "ERROR: No README.md file found!",
+  "main": "align_servos.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD"
+}
