@@ -5,15 +5,15 @@
   "main": "Alarm_system.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "engines": {
-    "node": "6.9.4"
+  },"engines": {
+    "node": "6.9.4"    // You can use any version
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "johnny-five": "^0.11.3",
+    "johnny-five": "^0.10.6",
     "nodemailer": "^4.0.1",
     "twilio": "^3.4.0"
   }
 }
+
