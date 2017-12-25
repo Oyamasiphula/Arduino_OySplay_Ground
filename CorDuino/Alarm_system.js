@@ -2,8 +2,8 @@
       nodemailer = require('nodemailer'),
       accountSid = process.env.USERACCOUNTSID,
       authToken = process.env.USERAUTHTOKEN;
-  var client = require('twilio')(accountSid, authToken);   
-  var myBoard, 
+  var client = require('twilio')(accountSid, authToken);
+  var myBoard,
       StartLedMode,
       piezoElement;
       // servo,
@@ -35,7 +35,7 @@
     // allows direct command line access
     this.repl.inject({
       motion: motion,
-        alertLedPin:alertLedPin, 
+        alertLedPin:alertLedPin,
           led2:StartLedMode,
               speaker: piezoElement
     // Pir Event API
@@ -47,7 +47,7 @@
     // "motionstart" events are fired when the "calibrated"
     // Led strobe fast when motion has started
       motion.on("motionstart", function(err) {
-      StartLedMode.strobe(50); 
+      StartLedMode.strobe(50);
       console.log("motionstart");
     });
     // "motionstart" events are fired following a "motionstart event
@@ -55,16 +55,16 @@
    	 motion.on("motionend", function(err) {
 		 console.log("Someone is braking into your room! Go CHECK! Go! Go!!! WARNING!!!");
       StartLedMode.strobe(2000);
-      //Below is call Me When led is done blinking using twilio 
+      //Below is call Me When led is done blinking using twilio
             client.makeCall({
               url: 'https://demo.twilio.com/welcome/voice/',
               to: 'STILLHAVETOUPDATETHISFIELD CURRENTPHONENUMBER',
-              from: 'STILLHAVETOUPDATETHISFIELD TWILIONUMBER'',
+              from: 'STILLHAVETOUPDATETHISFIELD TWILIONUMBER',
             statusCallback: 'https://demo.twilio.com/welcome/voice/',
           statusCallbackMethod: 'POST',
       statusCallbackEvent: ['initiated', 'ringing', 'answered', 'completed'],
       }, function(err, call){
-            if(err) { 
+            if(err) {
               console.log(err); return err; }
             process.stdout.write(call.sid);
         });
@@ -78,7 +78,7 @@
         console.log('Message sent: ' + info.response);
     });
 
-       //Below is Alert Sound Must play when motion is triggerd 
+       //Below is Alert Sound Must play when motion is triggerd
       piezoElement.play({
       // song is composed by a string of notes
       // a default beat is set, and the default octave is used
