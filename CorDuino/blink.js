@@ -24,3 +24,7 @@ board.on("ready", function() {
   });
   alertLedPin.strobe(100);
 });
+
+() => {
+console.log('newer funcs');  
+}
