@@ -59,20 +59,15 @@ board.on("ready", function() {
   motion.on("motionend", function(err) {
     console.log("Someone is braking into your room! Go CHECK! Go! Go!!! WARNING!!!");
     StartLedMode.strobe(2000);
-    //Below is call Me When led is done blinking using twilio
-    var promise = client.makeCall({
-      to: process.env.NUMTOCALL, // a number to call
-      from: process.env.TWILIONUM, // a Twilio number you own
-      url: 'https://demo.twilio.com/welcome/voice' // A URL containing TwiML instructions for the call
-    });
 
-    // You can assign functions to be called, at any time, after the request to
-    // Twilio has been completed.  The first function is called when the request
-    // succeeds, the second if there was an error.
-    promise.then(function(call) {
-      console.log('Call success! Call SID: ' + call.sid);
-    }, function(error) {
-      console.error('Call failed!  Reason: ' + error.message);
+    client.calls.create({
+      url: "http://demo.twilio.com/docs/voice.xml",
+      to: process.env.NUMTOCALL, // a number to call
+      from: process.env.TWILIONUM // a Twilio number you own
+    }, function(err, call) {
+      if (err) {
+        console.log(err.message);
+      }
     });
 
     // servo.sweep()
