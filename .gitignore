@@ -5,3 +5,4 @@ node_modules/
 CorDuino/enviromentyam.md
 CorDuino/.env
 CorDuino/latestTwilioNumber.png
+twilio_creds.txt
