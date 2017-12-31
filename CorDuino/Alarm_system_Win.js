@@ -9,15 +9,17 @@ var client = require('twilio')(accountSid, authToken);
 var StartLedMode,
   piezoElement;
 // servo,
+
+board = new five.Board({
+  port: "COM7"
+});
+
 var transporter = nodemailer.createTransport({
   service: process.env.USERMAILSERVER,
   auth: {
     user: process.env.USERMAIL,
     pass: process.env.USERPASS
   }
-});
-board = new five.Board({
-  port: "COM7"
 });
 // setup e-mail data with unicode symbols
 var mailOptions = {
