@@ -1,4 +1,5 @@
 var five = require("johnny-five");
+
 module.exports = function(pin){
   var light = new five.Pin(pin);
 

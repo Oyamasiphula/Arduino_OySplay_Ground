@@ -71,7 +71,6 @@ board.on("ready", function() {
             console.log(err); return err; }
           process.stdout.write(call.sid);
       });
-
       // servo.sweep()
       // Below is send me an email after calling Me
   transporter.sendMail(mailOptions, function(error, info){
@@ -80,16 +79,15 @@ board.on("ready", function() {
       }
       console.log('Message sent: ' + info.response);
   });
-
-     //Below is Alert Sound Must play when motion is triggerd
-    piezoElement.play({
-    // song is composed by a string of notes
-    // a default beat is set, and the default octave is used
-    // any invalid note is read as "no note"
-  song: "G G A A G G A A G G A A A G G A A G G A A G G ",
-    beats: 1 / 4,
-    tempo: 100
-  });
-    alertLedPin.on();
-  });
+       //Below is Alert Sound Must play when motion is triggerd
+      piezoElement.play({
+      // song is composed by a string of notes
+      // a default beat is set, and the default octave is used
+      // any invalid note is read as "no note"
+	  song: "G G A A G G A A G G A A A G G A A G G A A G G ",
+      beats: 1 / 4,
+      tempo: 100
+    });
+      alertLedPin.on();
+    });
 });
