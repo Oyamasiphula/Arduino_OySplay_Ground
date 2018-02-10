@@ -9,15 +9,17 @@ var client = require('twilio')(accountSid, authToken);
 var StartLedMode,
   piezoElement;
 // servo,
+
+board = new five.Board({
+  port: "COM7"
+});
+
 var transporter = nodemailer.createTransport({
   service: process.env.USERMAILSERVER,
   auth: {
     user: process.env.USERMAIL,
     pass: process.env.USERPASS
   }
-});
-board = new five.Board({
-  port: "COM7"
 });
 // setup e-mail data with unicode symbols
 var mailOptions = {
@@ -56,7 +58,7 @@ board.on("ready", function() {
   });
   // "motionstart" events are fired following a "motionstart event
   // when no movement has occurred led strobe slower in different patterns
-  motion.on("motionend", function(err) {
+  motion.on("motion-end", function(err) {
     console.log("Someone is braking into your room! Go CHECK! Go! Go!!! WARNING!!!");
     StartLedMode.strobe(2000);
 
