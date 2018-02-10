@@ -9,13 +9,11 @@
     "johnny-five": "^0.13.0",
     "nodemailer": "^4.4.2",
     "play-sound": "^1.1.2",
-    "player": "^0.6.1",
     "twilio": "^3.11.3"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "oyamasiphula",
 }
