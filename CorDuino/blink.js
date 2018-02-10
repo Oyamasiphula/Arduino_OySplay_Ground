@@ -1,7 +1,5 @@
 var five = require('johnny-five');
-const board = new five.Board({
-  port: "COM7"
-});
+const board = new five.Board();
 
 board.on("ready", function() {
 
@@ -26,5 +24,5 @@ board.on("ready", function() {
 });
 
 () => {
-console.log('newer funcs');  
+console.log('newer funcs');
 }
